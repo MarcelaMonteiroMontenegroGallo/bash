@@ -1,0 +1,22 @@
+ubuntu@ip-172-30-4-249:~/scripts$ sshpass
+The program 'sshpass' is currently not installed. You can install it by typing:
+sudo apt-get install sshpass
+ubuntu@ip-172-30-4-249:~/scripts$
+ubuntu@ip-172-30-4-249:~/scripts$ sudo apt-get install sshpass
+Reading package lists... Done
+Building dependency tree
+
+
+
+
+
+#!/bin/bash
+ # criar estrutura da pasta 
+day_folder="/home/ubuntu/scripts/arquivo_diario_canon/$(date +%Y)/$(date +%m)/$(date +%d)"
+mkdir -p $day_folder
+
+/usr/bin/sshpass -p "1qazZAQ!2wsx" sftp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o KexAlgorithms=diffie-hellman-group14-sha1                      7282924@ftp.s7.exacttarget.com:/reports/canon_sfmc_tableau_diario.csv $day_folder
+
+mv  $day_folder/canon_sfmc_tableau_diario.csv "$day_folder/canon_$(date +%d%m%Y).csv"
+
+aws s3 sync --region us-east-1 /home/ubuntu/scripts/arquivo_diario_canon/ s3://fbiz-marketingtech-datalake/Canon
