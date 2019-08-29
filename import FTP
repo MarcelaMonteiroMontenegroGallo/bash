@@ -1,8 +1,8 @@
-ubuntu@ip-172-30-4-249:~/scripts$ sshpass
+ubuntu@ip-xxx-xx-x-xxx:~/scripts$ sshpass
 The program 'sshpass' is currently not installed. You can install it by typing:
 sudo apt-get install sshpass
-ubuntu@ip-172-30-4-249:~/scripts$
-ubuntu@ip-172-30-4-249:~/scripts$ sudo apt-get install sshpass
+ubuntu@ip-xxx-xx-x-xxx:~/scripts$
+ubuntu@ip-xxx-xx-x-xxx:~/scripts$ sudo apt-get install sshpass
 Reading package lists... Done
 Building dependency tree
 
