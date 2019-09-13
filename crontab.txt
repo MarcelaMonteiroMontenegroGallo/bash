@@ -1,0 +1,2 @@
+Horas pares: 0 */2 * * *
+Horas ímpares: 0 1-23/2 * * *
